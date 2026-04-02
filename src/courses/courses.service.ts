@@ -29,7 +29,7 @@ export class CoursesService {
         return createCourseDto;
     }
 
-    update(id: string, updateCourseDto: any) {
+    update(id: number, updateCourseDto: any) {
         const indexCourse = this.courses.findIndex(course => course.id === Number(id));
         if (indexCourse < 0) {
             throw new NotFoundException(`Course #${id} not found`);
@@ -38,7 +38,7 @@ export class CoursesService {
         return this.courses[indexCourse];
     }
 
-    remove(id: string) {
+    remove(id: number) {
         const indexCourse = this.courses.findIndex(course => course.id === Number(id));
         if (indexCourse < 0) {
             throw new NotFoundException(`Course #${id} not found`);

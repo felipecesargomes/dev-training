@@ -20,7 +20,7 @@ export class CoursesController {
         return this.coursesService.findOne(Number(id));
     }
 
-    @HttpCode(204)
+    @HttpCode(201)
     @Post()
     create(@Body() createCourseDTO: CreateCourseDTO) {
         return this.coursesService.create(createCourseDTO);

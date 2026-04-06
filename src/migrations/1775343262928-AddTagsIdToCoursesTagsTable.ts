@@ -1,4 +1,5 @@
-import { MigrationInterface, QueryRunner, TableColumn, TableForeignKey } from "typeorm";
+import type { MigrationInterface, QueryRunner } from "typeorm";
+import { TableColumn, TableForeignKey } from "typeorm";
 
 export class AddTagsIdToCoursesTagsTable1775343262928 implements MigrationInterface {
 
@@ -22,6 +23,8 @@ export class AddTagsIdToCoursesTagsTable1775343262928 implements MigrationInterf
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropForeignKey('courses_tags', 'courses_tags_tags');
+        await queryRunner.dropColumn('courses_tags', 'tagsId');
     }
 
 }

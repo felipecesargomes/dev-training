@@ -1,4 +1,5 @@
-import { MigrationInterface, QueryRunner, TableColumn, TableForeignKey } from "typeorm";
+import type { MigrationInterface, QueryRunner } from "typeorm";
+import { TableColumn, TableForeignKey } from "typeorm";
 
 export class AddCoursesIdToCoursesTagsTable1775342740490 implements MigrationInterface {
 
